@@ -34,11 +34,11 @@ export default class Teacher {
   @IsEmail()
   email: string;
 
-  @OneToOne(type => Lesson)
+  @OneToOne(type => Lesson, teacher => Teacher)
   @JoinTable()
   lesson: Lesson;
 
-  @OneToOne(type => College)
+  @OneToOne(type => College, teacher => Teacher)
   @JoinTable()
   college: College;
 

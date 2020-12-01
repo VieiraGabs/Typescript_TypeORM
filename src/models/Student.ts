@@ -30,6 +30,11 @@ export default class Student {
   @IsEmail()
   email: string;
 
+  @Column()
+  @Max(100)
+  @Min(0)
+  note: number;
+
   @ManyToMany(type => Class)
   @JoinTable()
   classes: Class;
